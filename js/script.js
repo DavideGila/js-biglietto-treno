@@ -10,16 +10,20 @@ let km = parseInt (prompt('Quanti chilometri vuoi percorrere?'));
 let age = parseInt (prompt('Qual è l\ età del passeggero'));
 const kmprice = 0.21;
 let total = (km * kmprice );
+let totalPrice;
 
 if (isNaN(km) || isNaN(age)) {
     finalPrice.innerHTML = 'Devi inserire dei numeri!';
-    window.location.reload();
+    location.reload();
 }
 
 if (age < 18) {
-    console.log(total - (total * 0.2));
+    totalPrice = (total - (total * 0.2)).toFixed(2);
+    finalPrice.innerHTML = `Il prezzo totale è ${totalPrice}€`;
 } else if (age > 65) {
-    console.log(total - (total * 0.4));
+    totalPrice = (total - (total * 0.4)).toFixed(2);
+    finalPrice.innerHTML = `Il prezzo totale è ${totalPrice}€`;
 } else {
-    console.log (total);
+    totalPrice = (total).toFixed(2);
+    finalPrice.innerHTML = `Il prezzo totale è ${totalPrice}€`;
 }
